@@ -39,7 +39,7 @@
     }
 }
 
-- (Deck *)deck
+- (PlayingCardDeck *)deck
 {
     if (!_deck) {
         _deck = [[PlayingCardDeck alloc] init];
