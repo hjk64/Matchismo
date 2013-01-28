@@ -35,6 +35,8 @@
     if (sender.selected) {
         Card *card = [self.deck drawRandomCard];
         [sender setTitle:card.contents forState:UIControlStateSelected];
+        
+        // put the card back to the deck for endless playing
         [self.deck addCard:card atTop:NO];
     }
 }
