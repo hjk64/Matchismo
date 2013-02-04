@@ -95,6 +95,7 @@
 		4023113B16B424CA0056AD35 /* Matchismo */ = {
 			isa = PBXGroup;
 			children = (
+				4023114D16B424CA0056AD35 /* MainStoryboard.storyboard */,
 				4023115D16B431280056AD35 /* Model */,
 				40FDFD2616B708A30075225E /* View */,
 				40FDFD2816B708B90075225E /* Controller */,
@@ -137,7 +138,6 @@
 		40FDFD2616B708A30075225E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4023114D16B424CA0056AD35 /* MainStoryboard.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -245,7 +245,6 @@
 				4023114E16B424CA0056AD35 /* en */,
 			);
 			name = MainStoryboard.storyboard;
-			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
