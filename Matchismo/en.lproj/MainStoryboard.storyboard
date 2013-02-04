@@ -313,7 +313,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Flips: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eBG-XB-Xs1">
-                                <rect key="frame" x="20" y="419" width="144" height="21"/>
+                                <rect key="frame" x="20" y="419" width="136" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Score: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pqw-XH-av2">
+                                <rect key="frame" x="164" y="419" width="136" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -323,6 +330,7 @@
                     </view>
                     <connections>
                         <outlet property="flipsLabel" destination="eBG-XB-Xs1" id="nMU-G2-SKj"/>
+                        <outlet property="scoreLabel" destination="Pqw-XH-av2" id="FrU-CG-E8j"/>
                         <outletCollection property="cardButtons" destination="ylR-qp-ex2" id="Kg0-KZ-86o"/>
                         <outletCollection property="cardButtons" destination="jnw-Gy-eSh" id="ZGx-6N-9vY"/>
                         <outletCollection property="cardButtons" destination="cFH-1X-mUT" id="05V-Vx-jgd"/>
@@ -356,6 +364,7 @@
             <relationships>
                 <relationship kind="action" name="flipCard:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="flipsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
                 <relationship kind="outletCollection" name="cardButtons" candidateClass="UIButton"/>
             </relationships>
         </class>
