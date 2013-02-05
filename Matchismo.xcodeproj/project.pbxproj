@@ -21,6 +21,7 @@
 		4023116016B4316B0056AD35 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 4023115F16B4316B0056AD35 /* Deck.m */; };
 		4023117416B457E00056AD35 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4023117316B457E00056AD35 /* PlayingCard.m */; };
 		4023117816B45DCD0056AD35 /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 4023117716B45DCD0056AD35 /* PlayingCardDeck.m */; };
+		402E86A116C054AD00D2ED90 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 402E86A016C054AD00D2ED90 /* CardMatchingGame.m */; };
 		40FDFD2B16B708B90075225E /* CardGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FDFD2A16B708B90075225E /* CardGameViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,8 @@
 		4023117316B457E00056AD35 /* PlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCard.m; path = Model/PlayingCard.m; sourceTree = "<group>"; };
 		4023117616B45DCD0056AD35 /* PlayingCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingCardDeck.h; path = Model/PlayingCardDeck.h; sourceTree = "<group>"; };
 		4023117716B45DCD0056AD35 /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCardDeck.m; path = Model/PlayingCardDeck.m; sourceTree = "<group>"; };
+		402E869F16C054AD00D2ED90 /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardMatchingGame.h; path = Model/CardMatchingGame.h; sourceTree = "<group>"; };
+		402E86A016C054AD00D2ED90 /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGame.m; path = Model/CardMatchingGame.m; sourceTree = "<group>"; };
 		40FDFD2916B708B90075225E /* CardGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardGameViewController.h; sourceTree = "<group>"; };
 		40FDFD2A16B708B90075225E /* CardGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardGameViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +98,7 @@
 		4023113B16B424CA0056AD35 /* Matchismo */ = {
 			isa = PBXGroup;
 			children = (
+				4023114D16B424CA0056AD35 /* MainStoryboard.storyboard */,
 				4023115D16B431280056AD35 /* Model */,
 				40FDFD2616B708A30075225E /* View */,
 				40FDFD2816B708B90075225E /* Controller */,
@@ -122,14 +126,16 @@
 		4023115D16B431280056AD35 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4023115E16B4316B0056AD35 /* Deck.h */,
-				4023115F16B4316B0056AD35 /* Deck.m */,
-				4023117616B45DCD0056AD35 /* PlayingCardDeck.h */,
-				4023117716B45DCD0056AD35 /* PlayingCardDeck.m */,
+				402E869F16C054AD00D2ED90 /* CardMatchingGame.h */,
+				402E86A016C054AD00D2ED90 /* CardMatchingGame.m */,
 				4023115A16B4310E0056AD35 /* Card.h */,
 				4023115B16B4310E0056AD35 /* Card.m */,
+				4023115E16B4316B0056AD35 /* Deck.h */,
+				4023115F16B4316B0056AD35 /* Deck.m */,
 				4023117216B457E00056AD35 /* PlayingCard.h */,
 				4023117316B457E00056AD35 /* PlayingCard.m */,
+				4023117616B45DCD0056AD35 /* PlayingCardDeck.h */,
+				4023117716B45DCD0056AD35 /* PlayingCardDeck.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -137,7 +143,6 @@
 		40FDFD2616B708A30075225E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4023114D16B424CA0056AD35 /* MainStoryboard.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 				4023117416B457E00056AD35 /* PlayingCard.m in Sources */,
 				4023117816B45DCD0056AD35 /* PlayingCardDeck.m in Sources */,
 				40FDFD2B16B708B90075225E /* CardGameViewController.m in Sources */,
+				402E86A116C054AD00D2ED90 /* CardMatchingGame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +251,6 @@
 				4023114E16B424CA0056AD35 /* en */,
 			);
 			name = MainStoryboard.storyboard;
-			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
