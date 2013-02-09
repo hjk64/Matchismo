@@ -9,9 +9,16 @@
 #import "GameResultViewController.h"
 #import "GameResult.h"
 
+typedef enum {
+    GameResultSortByDate = 0,
+    GameResultSortByScore,
+    GameResultSortByDuration
+} GameResultSort;
+
 @interface GameResultViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *display;
+@property (nonatomic) GameResultSort sortBy;
 
 @end
 
@@ -20,7 +27,30 @@
 - (void)updateUI
 {
     NSString *displayText = @"";
-    for (GameResult *result in [GameResult allGameResults]) {
+    
+    NSArray *sortedGameResults = [[GameResult allGameResults].mutableCopy
+        sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2)
+        {
+            if ([obj1 isKindOfClass:[GameResult class]] && [obj2 isKindOfClass:[GameResult class]]) {
+                GameResult *result1 = (GameResult *)obj1;
+                GameResult *result2 = (GameResult *)obj2;
+                if (self.sortBy == GameResultSortByScore) { // highest score at top
+                    if (result1.score < result2.score) return NSOrderedDescending;
+                    else if (result1.score > result2.score) return NSOrderedAscending;
+                    else return NSOrderedSame;
+                } else if (self.sortBy == GameResultSortByDuration) { // note reversed comparison here; shortes duration at top
+                    if (result2.duration < result1.duration) return NSOrderedDescending;
+                    else if (result2.duration > result1.duration) return NSOrderedAscending;
+                    else return NSOrderedSame;
+                } else { // note reversed comparison here; last start date at top
+                    return [result2.start compare:result1.start];
+                }
+            } else {
+                return NSOrderedSame;
+            }
+        }];
+    
+    for (GameResult *result in sortedGameResults) {
         displayText = [displayText stringByAppendingFormat:@"Score: %d (%@, %0g)\n", result.score, result.end, round(result.duration)];
     }
     self.display.text = displayText;
@@ -47,6 +77,24 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     [self setup];
     return self;
+}
+
+- (IBAction)sortByDate
+{
+    self.sortBy = GameResultSortByDate;
+    [self updateUI];
+}
+
+- (IBAction)sortByScore
+{
+    self.sortBy = GameResultSortByScore;
+    [self updateUI];
+}
+
+- (IBAction)sortByDuration
+{
+    self.sortBy = GameResultSortByDuration;
+    [self updateUI];
 }
 
 @end
