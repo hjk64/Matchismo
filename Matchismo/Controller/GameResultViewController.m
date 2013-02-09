@@ -24,6 +24,18 @@ typedef enum {
 
 @implementation GameResultViewController
 
+#define DATE_COMPONENTS @"ddMMyyyyHHmmss"
+
++ (NSString *)dateToString:(NSDate *)date
+{
+    static NSDateFormatter *dateFormatter = nil;
+    if (!dateFormatter) {
+        dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:[NSDateFormatter dateFormatFromTemplate:DATE_COMPONENTS options:0 locale:[NSLocale currentLocale]]];
+    }
+    return [dateFormatter stringFromDate:date];
+}
+
 - (void)updateUI
 {
     NSString *displayText = @"";
@@ -51,7 +63,7 @@ typedef enum {
         }];
     
     for (GameResult *result in sortedGameResults) {
-        displayText = [displayText stringByAppendingFormat:@"Score: %d (%@, %0g)\n", result.score, result.end, round(result.duration)];
+        displayText = [displayText stringByAppendingFormat:@"Score: % 3d (%@, %0gs)\n", result.score, [GameResultViewController dateToString:result.end], round(result.duration)];
     }
     self.display.text = displayText;
 }
